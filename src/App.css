@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.side {
+  width: 20%;
+  color: white;
+  background-color: #424141;
+  padding: 20px;
+}
+
+.main {   
+  width: 60%;
+  background-color: rgb(128, 121, 121);
+  padding: 20px;
+}
+
+.row {  
+  place-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar-options {
+  padding: 10px;
+}
+
+

@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Sidebar from './pages/sidebar';
 import Mainbar from './pages/mainbar';
-import { BsFolderFill } from "react-icons/bs";
+import { ImDropbox } from "react-icons/im";
+import { BsStopwatch, BsDownload, BsMusicNoteBeamed } from "react-icons/bs";
+import { GrAppleAppStore } from "react-icons/gr";
+import { AiFillPicture} from "react-icons/ai";
+import { BiCameraMovie } from "react-icons/bi";
 import NavBar from './pages/navbar';
 
 class App extends Component {
@@ -13,6 +17,7 @@ class App extends Component {
       childFolders:[
         {
           name: 'Air Drop',
+          icon: <ImDropbox />,
           childFolders:[
             {
               name: 'folder1',
@@ -31,26 +36,32 @@ class App extends Component {
         },
         {
           name: 'Recents',
+          icon: <BsStopwatch />,
           childFolders:[]
         },
         {
           name: 'Applications',
+          icon: <GrAppleAppStore />,
           childFolders:[]
         },
         {
           name: 'Downloads',
+          icon: <BsDownload />,
           childFolders:[]
         },
         {
           name: 'Picture',
+          icon: <AiFillPicture />,
           childFolders:[]
         },
         {
           name: 'Music',
+          icon: <BsMusicNoteBeamed />,
           childFolders:[]
         },
         {
           name: 'Movies',
+          icon: <BiCameraMovie />,
           childFolders:[]
         }
       ]},
@@ -74,7 +85,7 @@ class App extends Component {
     const {folderStructure, selectedLocation} = this.state;
     return(
       <div className="container">
-        <NavBar></NavBar>
+        <NavBar setLocation={(location)=>{this.setLocation(location)}} selectedLocation={selectedLocation} folderStructure={folderStructure} setFolderStructure={(folderStructure)=>{this.setFolderStructure(folderStructure)}}></NavBar>
         <div className="row">
           <Sidebar selectedLocation={selectedLocation} folderStructure={folderStructure} setLocation={(location)=>{this.setLocation(location)}}/>
           <Mainbar selectedLocation={selectedLocation} folderStructure={folderStructure} setFolderStructure={(folderStructure)=>{this.setFolderStructure(folderStructure)}} setLocation={(location)=>{this.setLocation(location)}}/>

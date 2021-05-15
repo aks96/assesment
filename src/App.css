@@ -1,11 +1,15 @@
 /* .App {
   text-align: center;
 } */
-
+body > #root > div {
+  height: 100vh;
+}
 .container {
   /* display: flex; */
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .side {
@@ -13,31 +17,50 @@
   color: white;
   background-color: #424141;
   padding: 20px 0px;
+  height: 90%;
 }
 
+.heading {
+  color: #696767;
+  padding: 0px 5px 0px 10px;
+  font-style: italic;
+}
 .main {   
-  width: 80%;
-  background-color: rgb(128, 121, 121);
+  width: 90%;
+  background: black;
   padding: 20px 0px;
+  max-height: 90%;
+  overflow: scroll;
 }
 
 .folders {
   width: 20px;
-  padding: 10px;
+  padding: 20px;
+  color: white;
+  font-size: 14px;
+  align-items: center;
+  float: left;
+  margin-right: 50px;
+  margin-left: 20px;
 }
 
 .row {  
   /* padding: 50px; */
   border-radius: 1;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-content: center;
+  height: 100%;
 }
 
 .sidebar-options {
   padding: 10px;
+  color: #f1ebeb;
 }
 
+.sidebar-options:hover {
+  background: #9ea19e;
+}
 .menu {
   position:fixed;
   width: 150px;
@@ -55,7 +78,25 @@
 }
 
 .navbar {
-  background: black;
-  width: 90%;
-  padding: 10px 0px;
+  background: rgb(128, 121, 121);
+  width: 100%;
+  padding: 0px 0px;
+}
+
+.backButton {
+  color: white;
+  padding: 17px;
+  padding-left: 80px;
+} 
+
+.folderIcon {
+  color: white;
+  padding-left: 60%;
+  height: 50px;
+}
+
+.searchIcon {
+  color: white;
+  height: 50px;
+  padding-left: 10%;
 }

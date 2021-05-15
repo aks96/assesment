@@ -1,5 +1,5 @@
 const RightClickMenu = (props) => {
-    const {xCoordinate, yCoordinate, folderStructure, selectedLocation, setFolderStructure, selectedFolder} = props;
+    const {xCoordinate, yCoordinate, folderStructure, selectedLocation, setFolderStructure, selectedFolder, setRenameModeOn} = props;
     const locationArr = selectedLocation.split('$');
     const childFolderIndex = selectedFolder && parseInt(selectedFolder.split('$')[locationArr.length]);
     let updatedFolderStructure = {...folderStructure};
@@ -36,7 +36,7 @@ const RightClickMenu = (props) => {
                 <div>
                     <div className="item" onClick={()=>{deleteFolder()}}>Delete Folder</div>
                     <div className="item" onClick={()=>{copyFolder()}}>Copy Folder</div>
-                    <div className="item">Rename Folder</div>
+                    <div className="item" onClick={()=>setRenameModeOn(childFolderIndex)}>Rename Folder</div>
                 </div>
             )}
         </div>

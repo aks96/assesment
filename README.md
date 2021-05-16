@@ -1,3 +1,23 @@
+## Functionalities added
+    *create new folder
+    *create duplicate of folder
+    *delete folder
+    *rename folder
+    *Going back to parent folder form child folder
+    
+## How to use the application
+  This project works for one session once it is refreshed all the changes will be vanished.
+  
+## Commits 
+        ## First commit
+            This commit consist basic structure of project and mock data used.
+        ## Second commit
+            In this commit have added few business requirements like create new folder, delete folder, copy folder, right click menu and style update. Right click               menu will adjust itself depending on where we click for example: if we right click on some folder it comes up with all options create, delete, copy and             rename but if we dont select any folder it gives menu containing only Create new folder option.
+        ## Third commit 
+            In this commit have added some optional business requirements like rename and duplicate folders.
+        
+            
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

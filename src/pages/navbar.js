@@ -36,7 +36,6 @@ const NavBar = (props) => {
         <div className="navbar">
             <div className="row">
                 <FaFirefoxBrowser className="appIcon"></FaFirefoxBrowser>
-                {/* <p className="appIcon"><FaFirefoxBrowser></FaFirefoxBrowser>Browser</p> */}
                 <BsFillCaretLeftFill className="backButton" onClick={goToPrevPage}></BsFillCaretLeftFill>
                 <p style={{ color: "white" }}>Back</p>
                 <span><AiOutlineFolderOpen></AiOutlineFolderOpen>{folderPath}</span>

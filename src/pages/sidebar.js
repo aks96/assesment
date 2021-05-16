@@ -1,4 +1,3 @@
-import { DiDropBox } from "react-icons/di";
 
 const Sidebar = (props) => {
     const {folderStructure, selectedLocation, setLocation} = props;

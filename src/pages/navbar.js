@@ -1,13 +1,21 @@
 import { BsFillCaretLeftFill, BsFolderPlus, BsSearch } from "react-icons/bs";
+import {AiOutlineFolderOpen} from "react-icons/ai";
+import {FaFirefoxBrowser} from "react-icons/fa";
 
 const NavBar = (props) => {
     const {folderStructure,setFolderStructure,selectedLocation} = props;
     const locationArr = selectedLocation.split('$');
+    let folderPath = '';
     let updatedFolderStructure = {...folderStructure};
     let targetFolder = updatedFolderStructure;
-    locationArr.map(folderIndex => (
-        targetFolder = targetFolder.childFolders[parseInt(folderIndex)]
-    ));
+    locationArr.map(folderIndex => {
+        targetFolder = targetFolder.childFolders[parseInt(folderIndex)];
+        if(folderPath){
+            folderPath += '/';
+        }
+        folderPath += targetFolder.name;
+        return targetFolder;
+    });
     
     const goToPrevPage = () => {
         const {selectedLocation, setLocation} = props;
@@ -27,9 +35,11 @@ const NavBar = (props) => {
     return(
         <div className="navbar">
             <div className="row">
-                <p style={{color:"white", paddingLeft:"10px"}}>Browser</p>
+                <FaFirefoxBrowser className="appIcon"></FaFirefoxBrowser>
+                {/* <p className="appIcon"><FaFirefoxBrowser></FaFirefoxBrowser>Browser</p> */}
                 <BsFillCaretLeftFill className="backButton" onClick={goToPrevPage}></BsFillCaretLeftFill>
                 <p style={{color:"white"}}>Back</p>
+                <span><AiOutlineFolderOpen></AiOutlineFolderOpen>{folderPath}</span>
                 <BsFolderPlus size="30px" className="folderIcon" onClick={createNewFolder}></BsFolderPlus>
                 <BsSearch className="searchIcon"></BsSearch>
             </div>

@@ -83,6 +83,14 @@ body > #root > div {
   padding: 0px 0px;
 }
 
+.navbar span {
+  color: white;
+  margin-top: 5px;
+  margin-left: 5%;
+  width: 20%;
+  padding: 10px;
+}
+
 .backButton {
   color: white;
   padding: 17px;
@@ -91,7 +99,7 @@ body > #root > div {
 
 .folderIcon {
   color: white;
-  padding-left: 60%;
+  padding-left: 40%;
   height: 50px;
 }
 
@@ -99,4 +107,11 @@ body > #root > div {
   color: white;
   height: 50px;
   padding-left: 10%;
+}
+
+.appIcon {
+  padding: 15px 10px 10px 10px;
+  color: white;
+  width: 20px;
+  height: 20px;
 }

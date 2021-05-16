@@ -1,4 +1,8 @@
-import { BsFillCaretLeftFill, BsFolderPlus, BsSearch } from "react-icons/bs";
+import {
+    BsFillCaretLeftFill,
+    BsFolderPlus,
+    BsSearch
+} from "react-icons/bs";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { FaFirefoxBrowser } from "react-icons/fa";
 

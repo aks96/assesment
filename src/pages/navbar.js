@@ -5,9 +5,9 @@ const NavBar = (props) => {
     const locationArr = selectedLocation.split('$');
     let updatedFolderStructure = {...folderStructure};
     let targetFolder = updatedFolderStructure;
-    locationArr.map(folderIndex => {
-        targetFolder = targetFolder.childFolders[parseInt(folderIndex)];
-    });
+    locationArr.map(folderIndex => (
+        targetFolder = targetFolder.childFolders[parseInt(folderIndex)]
+    ));
     
     const goToPrevPage = () => {
         const {selectedLocation, setLocation} = props;

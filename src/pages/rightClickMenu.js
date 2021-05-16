@@ -4,9 +4,9 @@ const RightClickMenu = (props) => {
     const childFolderIndex = selectedFolder && parseInt(selectedFolder.split('$')[locationArr.length]);
     let updatedFolderStructure = {...folderStructure};
     let targetFolder = updatedFolderStructure;
-    locationArr.map(folderIndex => {
-        targetFolder = targetFolder.childFolders[parseInt(folderIndex)];
-    });
+    locationArr.map(folderIndex => (
+        targetFolder = targetFolder.childFolders[parseInt(folderIndex)]
+    ));
 
     const createNewFolder = () => {
         targetFolder.childFolders.push({

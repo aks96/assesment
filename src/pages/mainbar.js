@@ -9,9 +9,9 @@ const Mainbar = (props) => {
     const [renameModeOn, setRenameModeOn] = useState(-1);
     const locationArr = selectedLocation.split('$');
     let targetFolder = folderStructure;
-    locationArr.map(folderIndex => {
-        targetFolder = targetFolder.childFolders[parseInt(folderIndex)];
-    });
+    locationArr.map(folderIndex => (
+        targetFolder = targetFolder.childFolders[parseInt(folderIndex)]
+    ));
 
     const onRightClick = (e, folderLocation) => {
         e.preventDefault();

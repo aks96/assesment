@@ -5,9 +5,9 @@ const FolderName = (props) => {
         const locationArr = selectedLocation.split('$');
         let updatedFolderStructure = {...folderStructure};
         let targetFolder = updatedFolderStructure;
-        locationArr.map(folderIndex => {
-            targetFolder = targetFolder.childFolders[parseInt(folderIndex)];
-        });
+        locationArr.map(folderIndex => (
+            targetFolder = targetFolder.childFolders[parseInt(folderIndex)]
+        ));
         console.log(e);
         targetFolder.childFolders[index].name = e.target.value;
         setFolderStructure(updatedFolderStructure);

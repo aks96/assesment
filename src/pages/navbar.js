@@ -1,27 +1,27 @@
 import { BsFillCaretLeftFill, BsFolderPlus, BsSearch } from "react-icons/bs";
-import {AiOutlineFolderOpen} from "react-icons/ai";
-import {FaFirefoxBrowser} from "react-icons/fa";
+import { AiOutlineFolderOpen } from "react-icons/ai";
+import { FaFirefoxBrowser } from "react-icons/fa";
 
 const NavBar = (props) => {
-    const {folderStructure,setFolderStructure,selectedLocation} = props;
+    const { folderStructure, setFolderStructure, selectedLocation } = props;
     const locationArr = selectedLocation.split('$');
     let folderPath = '';
-    let updatedFolderStructure = {...folderStructure};
+    let updatedFolderStructure = { ...folderStructure };
     let targetFolder = updatedFolderStructure;
     locationArr.map(folderIndex => {
         targetFolder = targetFolder.childFolders[parseInt(folderIndex)];
-        if(folderPath){
+        if (folderPath) {
             folderPath += '/';
         }
         folderPath += targetFolder.name;
         return targetFolder;
     });
-    
+
     const goToPrevPage = () => {
-        const {selectedLocation, setLocation} = props;
+        const { selectedLocation, setLocation } = props;
         let locationArr = selectedLocation.split('$');
-        if(locationArr.length>1){
-            locationArr.splice(locationArr.length-1,1);
+        if (locationArr.length > 1) {
+            locationArr.splice(locationArr.length - 1, 1);
             setLocation(locationArr.join('$'));
         }
     }
@@ -32,13 +32,13 @@ const NavBar = (props) => {
         });
         setFolderStructure(updatedFolderStructure);
     }
-    return(
+    return (
         <div className="navbar">
             <div className="row">
                 <FaFirefoxBrowser className="appIcon"></FaFirefoxBrowser>
                 {/* <p className="appIcon"><FaFirefoxBrowser></FaFirefoxBrowser>Browser</p> */}
                 <BsFillCaretLeftFill className="backButton" onClick={goToPrevPage}></BsFillCaretLeftFill>
-                <p style={{color:"white"}}>Back</p>
+                <p style={{ color: "white" }}>Back</p>
                 <span><AiOutlineFolderOpen></AiOutlineFolderOpen>{folderPath}</span>
                 <BsFolderPlus size="30px" className="folderIcon" onClick={createNewFolder}></BsFolderPlus>
                 <BsSearch className="searchIcon"></BsSearch>

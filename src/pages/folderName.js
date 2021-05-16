@@ -1,9 +1,15 @@
 const FolderName = (props) => {
-    const {renameModeOn, name, folderStructure, setFolderStructure, selectedLocation, index, setRenameModeOn} = props;
-    
+    const { renameModeOn,
+        name,
+        folderStructure,
+        setFolderStructure,
+        selectedLocation,
+        index,
+        setRenameModeOn } = props;
+
     const rename = (e) => {
         const locationArr = selectedLocation.split('$');
-        let updatedFolderStructure = {...folderStructure};
+        let updatedFolderStructure = { ...folderStructure };
         let targetFolder = updatedFolderStructure;
         locationArr.map(folderIndex => (
             targetFolder = targetFolder.childFolders[parseInt(folderIndex)]
@@ -15,22 +21,22 @@ const FolderName = (props) => {
     }
 
     const handleKeyDown = (e) => {
-        if(e.key === 'Enter'){
+        if (e.key === 'Enter') {
             rename(e);
         }
     }
 
-    return(
+    return (
         <div>
-            {renameModeOn===index && (
+            {renameModeOn === index && (
                 <input
                     type='text'
                     defaultValue={name}
-                    onBlur={(e)=>{rename(e)}}
-                    onKeyDown={(e)=>{handleKeyDown(e)}}
+                    onBlur={(e) => { rename(e) }}
+                    onKeyDown={(e) => { handleKeyDown(e) }}
                 />
             )}
-            {renameModeOn!==index && name}
+            {renameModeOn !== index && name}
         </div>
     )
 }

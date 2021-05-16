@@ -34,9 +34,9 @@ const RightClickMenu = (props) => {
             <div className="item" onClick={()=>{createNewFolder()}}>New Folder</div>
             {selectedFolder && (
                 <div>
-                    <div className="item" onClick={()=>{deleteFolder()}}>Delete Folder</div>
-                    <div className="item" onClick={()=>{copyFolder()}}>Copy Folder</div>
-                    <div className="item" onClick={()=>setRenameModeOn(childFolderIndex)}>Rename Folder</div>
+                    <div className="item" onClick={()=>{deleteFolder()}}>Delete</div>
+                    <div className="item" onClick={()=>{copyFolder()}}>Duplicate</div>
+                    <div className="item" onClick={()=>setRenameModeOn(childFolderIndex)}>Rename</div>
                 </div>
             )}
         </div>

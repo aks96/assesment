@@ -1,4 +1,4 @@
-import { BsFillCaretLeftFill,BsFillCaretRightFill, BsFolderPlus, BsSearch } from "react-icons/bs";
+import { BsFillCaretLeftFill, BsFolderPlus, BsSearch } from "react-icons/bs";
 
 const NavBar = (props) => {
     const {folderStructure,setFolderStructure,selectedLocation} = props;
@@ -31,6 +31,7 @@ const NavBar = (props) => {
                 <BsFillCaretLeftFill className="backButton" onClick={goToPrevPage}></BsFillCaretLeftFill>
                 <p style={{color:"white"}}>Back</p>
                 <BsFolderPlus size="30px" className="folderIcon" onClick={createNewFolder}></BsFolderPlus>
+                <BsSearch className="searchIcon"></BsSearch>
             </div>
         </div>
     )
